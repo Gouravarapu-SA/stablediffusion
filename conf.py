@@ -6,6 +6,7 @@ from dataclasses import dataclass
 from typing import Any, cast
 mdi1="mdi:weather-cloudy"
 mdi2="mdi:weather-sunny"
+#added
 
 from homeassistant.components.sensor import (
     SensorDeviceClass,
