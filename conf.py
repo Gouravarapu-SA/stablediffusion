@@ -4,6 +4,7 @@ from _future_ import annotations
 from collections.abc import Callable
 from dataclasses import dataclass
 from typing import Any, cast
+mdi1="mdi:weather-cloudy"
 
 from homeassistant.components.sensor import (
     SensorDeviceClass,
@@ -78,7 +79,7 @@ FORECAST_SENSOR_TYPES: tuple[AccuWeatherSensorDescription, ...] = (
     *(
         AccuWeatherSensorDescription(
             key="CloudCoverDay",
-            icon="mdi:weather-cloudy",
+            icon=mdi1,
             entity_registry_enabled_default=False,
             native_unit_of_measurement=PERCENTAGE,
             value_fn=lambda data: cast(int, data),
@@ -90,7 +91,7 @@ FORECAST_SENSOR_TYPES: tuple[AccuWeatherSensorDescription, ...] = (
     *(
         AccuWeatherSensorDescription(
             key="CloudCoverNight",
-            icon="mdi:weather-cloudy",
+            icon=mdi1,
             entity_registry_enabled_default=False,
             native_unit_of_measurement=PERCENTAGE,
             value_fn=lambda data: cast(int, data),
@@ -358,7 +359,7 @@ SENSOR_TYPES: tuple[AccuWeatherSensorDescription, ...] = (
     ),
     AccuWeatherSensorDescription(
         key="CloudCover",
-        icon="mdi:weather-cloudy",
+        icon=mdi1,
         entity_registry_enabled_default=False,
         state_class=SensorStateClass.MEASUREMENT,
         native_unit_of_measurement=PERCENTAGE,
