@@ -5,6 +5,7 @@ from collections.abc import Callable
 from dataclasses import dataclass
 from typing import Any, cast
 mdi1="mdi:weather-cloudy"
+mdi2="mdi:weather-sunny"
 
 from homeassistant.components.sensor import (
     SensorDeviceClass,
@@ -217,7 +218,7 @@ FORECAST_SENSOR_TYPES: tuple[AccuWeatherSensorDescription, ...] = (
     *(
         AccuWeatherSensorDescription(
             key="SolarIrradianceDay",
-            icon="mdi:weather-sunny",
+            icon=mdi2,
             entity_registry_enabled_default=False,
             native_unit_of_measurement=UnitOfIrradiance.WATTS_PER_SQUARE_METER,
             value_fn=lambda data: cast(float, data[ATTR_VALUE]),
@@ -229,7 +230,7 @@ FORECAST_SENSOR_TYPES: tuple[AccuWeatherSensorDescription, ...] = (
     *(
         AccuWeatherSensorDescription(
             key="SolarIrradianceNight",
-            icon="mdi:weather-sunny",
+            icon=mdi2,
             entity_registry_enabled_default=False,
             native_unit_of_measurement=UnitOfIrradiance.WATTS_PER_SQUARE_METER,
             value_fn=lambda data: cast(float, data[ATTR_VALUE]),
@@ -276,7 +277,7 @@ FORECAST_SENSOR_TYPES: tuple[AccuWeatherSensorDescription, ...] = (
     *(
         AccuWeatherSensorDescription(
             key="UVIndex",
-            icon="mdi:weather-sunny",
+            icon=mdi2,
             native_unit_of_measurement=UV_INDEX,
             value_fn=lambda data: cast(int, data[ATTR_VALUE]),
             attr_fn=lambda data: {ATTR_LEVEL: data[ATTR_CATEGORY]},
@@ -411,7 +412,7 @@ SENSOR_TYPES: tuple[AccuWeatherSensorDescription, ...] = (
     ),
     AccuWeatherSensorDescription(
         key="UVIndex",
-        icon="mdi:weather-sunny",
+        icon=mdi2,
         state_class=SensorStateClass.MEASUREMENT,
         native_unit_of_measurement=UV_INDEX,
         value_fn=lambda data: cast(int, data),
